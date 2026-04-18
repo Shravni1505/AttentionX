@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AttentionX — Transform Long Videos Into Viral Clips</title>
+    <meta name="description" content="AI-powered content repurposing engine. Upload long-form videos and get vertical, caption-ready viral clips automatically.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Gradient Orbs -->
+    <div class="bg-orbs" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-brand">
+            <div class="logo-icon">
+                <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                    <defs>
+                        <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" style="stop-color:#8b5cf6"/>
+                            <stop offset="100%" style="stop-color:#06b6d4"/>
+                        </linearGradient>
+                    </defs>
+                    <rect x="2" y="2" width="28" height="28" rx="8" stroke="url(#logo-grad)" stroke-width="2.5" fill="none"/>
+                    <polygon points="13,10 13,22 23,16" fill="url(#logo-grad)"/>
+                </svg>
+            </div>
+            <span class="brand-name">Attention<span class="brand-accent">X</span></span>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="nav-link" id="nav-home" onclick="showSection('upload')">Home</a>
+            <a href="https://github.com" class="nav-link" target="_blank">GitHub ↗</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- ═══════ SECTION 1: UPLOAD ═══════ -->
+        <section class="section section-upload active" id="section-upload">
+            <div class="hero">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    AI-Powered Content Engine
+                </div>
+                <h1 class="hero-title">
+                    Transform Long Videos<br>
+                    Into <span class="gradient-text">Viral Clips</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Upload a lecture, podcast, or workshop. Our AI finds the emotional peaks, 
+                    smart-crops for TikTok/Reels, and adds dynamic captions — automatically.
+                </p>
+            </div>
+
+            <!-- Features Row -->
+            <div class="features-row">
+                <div class="feature-card">
+                    <div class="feature-icon">🧠</div>
+                    <h3>Emotional Peak Detection</h3>
+                    <p>AI analyzes audio energy and sentiment to find the most passionate, viral-worthy moments.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👤</div>
+                    <h3>Smart Face Tracking</h3>
+                    <p>Computer vision keeps the speaker perfectly centered when cropping to vertical 9:16.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">✨</div>
+                    <h3>Dynamic Captions</h3>
+                    <p>Auto-generated karaoke-style captions with hook headlines to stop the scroll.</p>
+                </div>
+            </div>
+
+            <!-- Upload Zone -->
+            <div class="upload-container">
+                <div class="upload-zone" id="upload-zone">
+                    <input type="file" id="file-input" accept="video/*" hidden>
+                    <div class="upload-content">
+                        <div class="upload-icon">
+                            <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+                                <circle cx="32" cy="32" r="30" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.3"/>
+                                <path d="M32 20V44M20 32L32 20L44 32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="upload-title">Drop your video here</h3>
+                        <p class="upload-hint">or <span class="upload-browse">click to browse</span></p>
+                        <p class="upload-formats">MP4, MOV, AVI, MKV, WebM • Max 500MB</p>
+                    </div>
+                    <div class="upload-progress-overlay" id="upload-progress-overlay">
+                        <div class="upload-progress-ring">
+                            <svg viewBox="0 0 120 120">
+                                <circle class="ring-bg" cx="60" cy="60" r="54"/>
+                                <circle class="ring-fill" cx="60" cy="60" r="54" id="upload-ring"/>
+                            </svg>
+                            <span class="ring-text" id="upload-percent">0%</span>
+                        </div>
+                        <p class="upload-status-text" id="upload-status-text">Uploading...</p>
+                    </div>
+                </div>
+                <div class="selected-file" id="selected-file" style="display:none;">
+                    <div class="file-info">
+                        <span class="file-icon">🎬</span>
+                        <div>
+                            <span class="file-name" id="file-name"></span>
+                            <span class="file-size" id="file-size"></span>
+                        </div>
+                    </div>
+                    <button class="btn btn-clear" id="btn-clear" title="Remove file">✕</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ SECTION 2: PROCESSING ═══════ -->
+        <section class="section section-processing" id="section-processing">
+            <div class="processing-card glass-card">
+                <div class="processing-header">
+                    <h2>Processing Your Video</h2>
+                    <p class="processing-filename" id="processing-filename"></p>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                    <div class="progress-info">
+                        <span class="progress-percent" id="progress-percent">0%</span>
+                        <span class="progress-message" id="progress-message">Initializing...</span>
+                    </div>
+                </div>
+
+                <!-- Pipeline Steps -->
+                <div class="pipeline-steps" id="pipeline-steps">
+                    <div class="step" data-step="extracting_audio">
+                        <div class="step-indicator">
+                            <div class="step-dot"></div>
+                        </div>
+                        <div class="step-content">
+                            <span class="step-label">🎵 Extract Audio</span>
+                            <span class="step-desc">Separating audio track from video</span>
+                        </div>
+                    </div>
+                    <div class="step" data-step="analyzing_audio">
+                        <div class="step-indicator">
+                            <div class="step-dot"></div>
+                        </div>
+                        <div class="step-content">
+                            <span class="step-label">📊 Analyze Energy</span>
+                            <span class="step-desc">Detecting emotional peaks in audio</span>
+                        </div>
+                    </div>
+                    <div class="step" data-step="transcribing">
+                        <div class="step-indicator">
+                            <div class="step-dot"></div>
+                        </div>
+                        <div class="step-content">
+                            <span class="step-label">🎙️ Transcribe Audio</span>
+                            <span class="step-desc">AI transcription with timestamps</span>
+                        </div>
+                    </div>
+                    <div class="step" data-step="finding_nuggets">
+                        <div class="step-indicator">
+                            <div class="step-dot"></div>
+                        </div>
+                        <div class="step-content">
+                            <span class="step-label">🧠 Find Golden Nuggets</span>
+                            <span class="step-desc">AI identifying viral moments</span>
+                        </div>
+                    </div>
+                    <div class="step" data-step="processing_clips">
+                        <div class="step-indicator">
+                            <div class="step-dot"></div>
+                        </div>
+                        <div class="step-content">
+                            <span class="step-label">✂️ Generate Clips</span>
+                            <span class="step-desc">Smart crop, face tracking, captions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ SECTION 3: RESULTS ═══════ -->
+        <section class="section section-results" id="section-results">
+            <div class="results-header">
+                <div>
+                    <h2 class="results-title">Your Viral Clips Are Ready! 🎉</h2>
+                    <p class="results-subtitle" id="results-subtitle">Generated 0 clips from your video</p>
+                </div>
+                <div class="results-actions">
+                    <button class="btn btn-secondary" id="btn-new" onclick="resetToUpload()">
+                        ← New Video
+                    </button>
+                </div>
+            </div>
+
+            <div class="clips-grid" id="clips-grid">
+                <!-- Clips will be inserted here dynamically -->
+            </div>
+        </section>
+
+        <!-- ═══════ ERROR STATE ═══════ -->
+        <section class="section section-error" id="section-error">
+            <div class="error-card glass-card">
+                <div class="error-icon">⚠️</div>
+                <h2>Something went wrong</h2>
+                <p class="error-message" id="error-message"></p>
+                <button class="btn btn-primary" onclick="resetToUpload()">Try Again</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Video Preview Modal -->
+    <div class="modal-overlay" id="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-content glass-card">
+            <button class="modal-close" id="modal-close" onclick="closeModal()">✕</button>
+            <video class="modal-video" id="modal-video" controls>
+                <source src="" type="video/mp4">
+            </video>
+            <div class="modal-info">
+                <h3 class="modal-hook" id="modal-hook"></h3>
+                <p class="modal-transcript" id="modal-transcript"></p>
+                <div class="modal-actions">
+                    <button class="btn btn-primary" id="modal-download">⬇ Download Clip</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Built with ❤️ using Gemini AI, MediaPipe, MoviePy & FastAPI</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
