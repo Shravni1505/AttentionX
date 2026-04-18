@@ -2,16 +2,6 @@
 
 > Transform long-form videos into viral short-form clips with AI-powered emotional peak detection, smart face-tracking crop, and dynamic captions.
 
-![AttentionX Banner](https://img.shields.io/badge/AttentionX-AI%20Content%20Engine-8b5cf6?style=for-the-badge&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSI+PHJlY3QgeD0iMiIgeT0iMiIgd2lkdGg9IjI4IiBoZWlnaHQ9IjI4IiByeD0iOCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyLjUiLz48cG9seWdvbiBwb2ludHM9IjEzLDEwIDEzLDIyIDIzLDE2IiBmaWxsPSJ3aGl0ZSIvPjwvc3ZnPg==)
-
-## 📽️ Demo Video
-
-> **[🔗 Watch the Demo Video on Google Drive](YOUR_GOOGLE_DRIVE_LINK_HERE)**
->
-> *(Replace with your actual demo video link)*
-
----
-
 ## ✨ Features
 
 ### 🧠 Emotional Peak Detection
