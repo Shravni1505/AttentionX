@@ -2,6 +2,9 @@
 
 > Transform long-form videos into viral short-form clips with AI-powered emotional peak detection, smart face-tracking crop, and dynamic captions.
 
+##  Demo Link(Google Drive)
+https://drive.google.com/file/d/10AJtIBvBXDJN_XWu_tSXHO-G__9rne_m/view?usp=sharing
+
 ##  Features
 
 ###  Emotional Peak Detection
