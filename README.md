@@ -2,19 +2,19 @@
 
 > Transform long-form videos into viral short-form clips with AI-powered emotional peak detection, smart face-tracking crop, and dynamic captions.
 
-## ✨ Features
+##  Features
 
-### 🧠 Emotional Peak Detection
+###  Emotional Peak Detection
 - **Audio Energy Analysis** using Librosa to detect passionate, high-energy moments
 - **AI Sentiment Analysis** using Google Gemini to find the most compelling, viral-worthy segments
 - **Smart Ranking** that combines audio spikes + content quality for optimal clip selection
 
-### 👤 Smart Face-Tracking Crop
+###  Smart Face-Tracking Crop
 - **MediaPipe Face Detection** tracks the speaker's face across frames
 - **Automatic 9:16 Crop** converts horizontal (16:9) video to vertical format for TikTok/Reels/Shorts
 - **Speaker-Centered Framing** ensures the speaker stays perfectly centered in every clip
 
-### ✨ Dynamic Captions
+###  Dynamic Captions
 - **Auto-generated Transcription** with timestamp synchronization via Gemini AI
 - **Karaoke-style Word Display** with timed word groups at the bottom of the screen
 - **Hook Headlines** — AI generates catchy, scroll-stopping headlines overlaid on each clip
@@ -28,7 +28,7 @@
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ```
 ┌─────────────────────────────────────────────┐
@@ -57,7 +57,7 @@
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -101,7 +101,7 @@ Open your browser and navigate to: **http://localhost:8000**
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 | Component | Technology | Purpose |
 |-----------|-----------|---------|
@@ -115,7 +115,7 @@ Open your browser and navigate to: **http://localhost:8000**
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 attentionx/
@@ -138,7 +138,7 @@ attentionx/
 
 ---
 
-## 📊 Evaluation Criteria Alignment
+##  Evaluation Criteria Alignment
 
 | Criteria | How AttentionX Addresses It |
 |----------|---------------------------|
@@ -150,7 +150,7 @@ attentionx/
 
 ---
 
-## 🔧 Configuration
+##  Configuration
 
 | Environment Variable | Description | Required |
 |---------------------|-------------|----------|
@@ -158,13 +158,13 @@ attentionx/
 
 ---
 
-## 📝 License
+##  License
 
 This project was built for the UnsaidTalks Hackathon 2025.
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - **Google Gemini AI** — For powerful multimodal analysis
 - **MediaPipe** — For blazing-fast face detection
