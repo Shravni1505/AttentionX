@@ -136,28 +136,6 @@ attentionx/
 └── output/                 # Generated clips (auto-created)
 ```
 
----
-
-##  Evaluation Criteria Alignment
-
-| Criteria | How AttentionX Addresses It |
-|----------|---------------------------|
-| **Impact (20%)** | Transforms hours of content into viral clips automatically; saves creators 90%+ of editing time |
-| **Innovation (20%)** | Novel combination of audio energy analysis + AI sentiment + face tracking + auto-captioning |
-| **Technical Execution (20%)** | Clean architecture, modular codebase, robust error handling, well-documented |
-| **User Experience (25%)** | Premium glassmorphism dark UI, drag-drop upload, real-time progress, video previews |
-| **Presentation (15%)** | Full demo video walkthrough, comprehensive README |
-
----
-
-##  Configuration
-
-| Environment Variable | Description | Required |
-|---------------------|-------------|----------|
-| `GOOGLE_API_KEY` | Google Gemini API key | ✅ Yes |
-
----
-
 ##  License
 
 This project was built for the UnsaidTalks Hackathon 2025.
